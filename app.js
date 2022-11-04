@@ -21,7 +21,7 @@ var commentRoutes			= require("./routes/comments"),
 
 //seedDB();
 
-
+let port = process.env.PORT || 3000
 
 mongoose.connect("mongodb://localhost/Yelp_camp6", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
@@ -80,6 +80,6 @@ app.use(commentRoutes);
 app.use(campgroundRoutes);
 
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("Server is running");
 });
